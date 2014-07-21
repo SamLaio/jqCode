@@ -1,14 +1,17 @@
 jQuery.fn.extend({
     jqCode: function (settings) {
         var config = {
-            'php_path': './'
+            'php_path': './',
+			'jq_ck' : ''
         };
 		var pw_arr = new Array();
 		var cki = '', ckm = '';
 		if (settings){$.extend(config, settings);}
 		$(window).ready(function(){
 			$.ajax({
-				url: config.php_path+'class.jqCode.php?get',
+				url: config.php_path+'class.jqCode.php',
+				type: "POST",
+				data: { 'get' : config.jq_ck},
 				dataType: "json",
 				async:false,
 				success: function(response) {

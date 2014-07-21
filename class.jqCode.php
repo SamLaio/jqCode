@@ -53,7 +53,7 @@
 	if(!isset($_SESSION))
 		session_start();
 	$paswd = new paswd;
-	if(isset($_GET['get'])){
+	if(isset($_POST['get']) and $_SESSION['jq_ck'] == $_POST['get']){
 		$_SESSION['jq_set'] = $paswd -> se_set();
 		$ret = $_SESSION['jq_set'];
 		$tmp = array();

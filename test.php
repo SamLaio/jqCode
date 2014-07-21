@@ -1,16 +1,20 @@
 <?php
 	include 'class.jqCode.php';
-	/*if(!isset($_SESSION['jq_set']) or count($_SESSION['jq_set']) != 3)
-		$_SESSION['jq_set'] = $paswd -> se_set();*/
-	if(isset($_GET['jq_out'])){
-		$tmp = $paswd -> str_decode($_GET['jq_out'],$_SESSION['jq_set']);
+	//echo $_SESSION['jq_ck'];
+	$_SESSION['jq_ck'] = rand(10,20);
+	$tmp = '';
+	for($i = 0; $i <= $_SESSION['jq_ck']; $i++){
+		$tmp .= chr(rand(33,126));
+	}
+	$_SESSION['jq_ck'] = $paswd->encode($tmp,$paswd->code_str());
+	if(isset($_POST['jq_out'])){
+		$tmp = $paswd -> str_decode($_POST['jq_out'],$_SESSION['jq_set']);
 		print_r($tmp);
-		//$_SESSION['jq_set'] = $paswd -> se_set();
 	}
 ?>
 <script src="jquery.min.js"></script> 
 <script src="class.jqCode.js"></script> 
-<form id = "login" method='get'>
+<form id = "login" method='post'>
 	<input id = 'pw' type = 'password' name = 'pw' />
 	<input id = 'pw2' type = 'password' name = 'o00' />
 	<input type = 'submit'>
@@ -20,5 +24,5 @@
 	Can create obj like $('#login').jqCode({url});
 	url is class.jqCode.php path
 	*/
-	$('#login').jqCode();
+	$('#login').jqCode({'jq_ck':'<?php echo $_SESSION['jq_ck'];?>'});
 </script>
