@@ -57,9 +57,8 @@
 		$_SESSION['jq_set'] = $paswd -> se_set();
 		$ret = $_SESSION['jq_set'];
 		$tmp = array();
-		foreach($ret['pw_array'] as $key => $value){
+		foreach($ret['pw_array'] as $key => $value)
 			$tmp[] = array('name'=> $value , 'c'=> $key);
-		}
 		$ret['pw_array'] = $tmp;
 		echo json_encode($ret);
 	}

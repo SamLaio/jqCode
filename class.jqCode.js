@@ -8,7 +8,7 @@ jQuery.fn.extend({
 		if (settings){$.extend(config, settings);}
 		$(window).ready(function(){
 			$.ajax({
-				url: config.php_path+'class.pw_encode.php?get',
+				url: config.php_path+'class.jqCode.php?get',
 				dataType: "json",
 				async:false,
 				success: function(response) {
