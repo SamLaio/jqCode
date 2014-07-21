@@ -1,7 +1,7 @@
 <?php
 	include 'class.jqCode.php';
-	if(!isset($_SESSION['jq_set']) or count($_SESSION['jq_set']) != 3)
-		$_SESSION['jq_set'] = $paswd -> se_set();
+	/*if(!isset($_SESSION['jq_set']) or count($_SESSION['jq_set']) != 3)
+		$_SESSION['jq_set'] = $paswd -> se_set();*/
 	if(isset($_GET['jq_out'])){
 		$tmp = $paswd -> str_decode($_GET['jq_out'],$_SESSION['jq_set']);
 		//print_r($tmp);
