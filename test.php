@@ -5,7 +5,7 @@
 	if(isset($_GET['jq_out'])){
 		$tmp = $paswd -> str_decode($_GET['jq_out'],$_SESSION['jq_set']);
 		//print_r($tmp);
-		$_SESSION['jq_set'] = $paswd -> se_set();
+		//$_SESSION['jq_set'] = $paswd -> se_set();
 	}
 ?>
 <script src="jquery.min.js"></script> 

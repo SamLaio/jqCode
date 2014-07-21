@@ -54,6 +54,7 @@
 		session_start();
 	$paswd = new paswd;
 	if(isset($_GET['get'])){
+		$_SESSION['jq_set'] = $paswd -> se_set();
 		$ret = $_SESSION['jq_set'];
 		$tmp = array();
 		foreach($ret['pw_array'] as $key => $value){
