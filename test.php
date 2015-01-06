@@ -9,7 +9,7 @@
 	$_SESSION['jq_ck'] = $paswd->encode($tmp,$paswd->code_str());
 	if(isset($_POST['jq_out'])){
 		$tmp = $paswd -> str_decode($_POST['jq_out'],$_SESSION['jq_set']);
-		print_r($tmp);
+		/*print_r($tmp);*/
 	}
 ?>
 <script src="jquery.min.js"></script> 
